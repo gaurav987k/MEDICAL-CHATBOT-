@@ -1,16 +1,10 @@
-from setuptools import setup, find_packages
-
-with open("requirements.txt") as f:
-    requirements = f.read().splitlines()
+from setuptools import find_packages, setup
 
 setup(
-    name="medical-chatbot",
+    name="medical_chatbot",
     version="0.1.0",
-    author="Gaurav Kanojiya",
-    author_email="gauravkanojiya575@gmail.com",
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),
-    install_requires=requirements
+    author="Boktiar Ahmed Bappy",
+    author_email="entbappy73@gmail.com",
+    packages=find_packages(),
+    install_requires=[]
 )
-
-
