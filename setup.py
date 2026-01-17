@@ -5,7 +5,7 @@ setup(
     version="0.1.0",
     author="Boktiar Ahmed Bappy",
     author_email="entbappy73@gmail.com",
-    description="Medical Chatbot using LangChain and HuggingFace",
+    description="Medical chatbot using LangChain and HuggingFace",
     packages=find_packages(),
     install_requires=[
         "python-dotenv",
@@ -16,7 +16,8 @@ setup(
         "pypdf",
         "faiss-cpu",
         "numpy",
-        "tqdm"
+        "tqdm",
     ],
-    python_requires=">=3.10"
+    python_requires=">=3.10",
 )
+
