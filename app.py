@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 from src.helper import download_hugging_face_embeddings
 from langchain_pinecone import PineconeVectorStore
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -35,8 +35,12 @@ docsearch = PineconeVectorStore.from_existing_index(
 
 
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":3})
+chatModel = ChatGroq(
+    model="llama3-8b-8192",
+    api_key=OPENAI_API_KEY,
+    temperature=0
+)
 
-chatModel = ChatOpenAI(model="gpt-4o")
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", system_prompt),
